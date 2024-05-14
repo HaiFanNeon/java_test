@@ -1,3 +1,5 @@
+package test01;
+
 public class User {
     private String _username;
     private String _pwd;
@@ -62,6 +64,6 @@ public class User {
     }
 
 //    public String toString() {
-//        return "User{_username = " + _username + ", _pwd = " + _pwd + ", _email = " + _email + "}";
+//        return "test01.User{_username = " + _username + ", _pwd = " + _pwd + ", _email = " + _email + "}";
 //    }
 }
