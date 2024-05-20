@@ -2,22 +2,16 @@ package test07;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class test {
     public static void main(String[] args) {
-        Integer[] a = {5,3,9,1};
-
-//        Arrays.sort(a, new Comparator<Integer>() {
-//            @Override
-//            public int compare(Integer integer, Integer t1) {
-//                return integer - t1;
-//            }
-//        });
-
-//        Arrays.sort(a, (a1, b)->a1 - b);
-//        System.out.println(Arrays.toString(a));
-        Arrays.sort(a, test::subtraction);
-        System.out.println(Arrays.toString(a));
+        String s = "adsf";
+        Pattern regex = Pattern.compile("[a-z]+");
+        Matcher m = regex.matcher(s);
+        System.out.println(m.matches());
     }
     public static int subtraction(int n1, int n2) {
         return n1 - n2;
