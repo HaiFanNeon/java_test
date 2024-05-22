@@ -1,19 +1,27 @@
 package test09;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class test {
     public static void main(String[] args) throws IOException {
-        FileOutputStream fos = new FileOutputStream("D:\\java_code\\java_test\\test\\src\\test09\\text.txt", true);
-//        byte[] arr = new byte[]{97,98,99};
-        String str = "adfsasdfads\r\n";
-        fos.write(str.getBytes(), 0, str.length());
+        String s = "il**autonrd**cl**nh*up*afpizp****d*a****lst";
+        List<Character> list = new ArrayList<>();
+        for (char ch : s.toCharArray()) {
+            if (ch == '*') {
+                list.remove(list.get(list.size() - 1));
+            }
+            else {
+                list.add(ch);
+            }
+        }
+        String ans = "";
+        for (var c : list) {
+            ans += c;
+        }
 
-        fos.write("66666\r\n".getBytes());
-
-        fos.close();
+        System.out.println(ans);
 
     }
 }
