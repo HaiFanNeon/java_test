@@ -34,15 +34,5 @@ public class test1 {
         for (var a : f) {
             System.out.println(a);
         }
-
-
-
-
-
-
-
-
-
-
     }
 }
