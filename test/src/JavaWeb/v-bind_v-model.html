@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a v-bind:href="url">boost1</a>
+        <a :href="url">boost2</a>
+
+        <input type="text" v-model="url">
+    </div>
+</body>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                url:"http://1.117.232.232:8080/",
+                msg:"Hello World"
+            }
+        })
+    </script>
+</html>

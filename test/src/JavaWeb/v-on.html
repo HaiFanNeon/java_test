@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="点击" v-on:click="handler">
+    </div>
+</body>
+    <script>
+        let i = 0;
+        new Vue({
+            el:"#app",
+            data:{
+
+            },
+            methods:{
+                handler:function() {
+                    i += 1;
+                    console.log(`点了${i}次`);
+                }
+            }
+        })
+    </script>
+</html>
