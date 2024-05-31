@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 
 //@MapperScan ("com.haifan.exmple01.mapper.EmpMapper")
@@ -43,16 +44,10 @@ class Exmple01ApplicationTests {
     @Test
     public void testUpdate() {
         Emp emp = new Emp();
-        emp.setId(19);
-        emp.setUsername("lisi2");
-        emp.setName("李四2");
-        emp.setImage("1.jpg");
-        emp.setGender((short)1);
-        emp.setJob((short)1);
-        emp.setEntrydate(LocalDate.of(2000, 1, 1));
-        emp.setCreateTime(LocalDateTime.now());
-        emp.setUpdateTime(LocalDateTime.now());
-        emp.setDeptId(1);
+        emp.setId(1);
+        emp.setUsername("HaiFan");
+        emp.setName("海帆");
+
 
         empMapper.update(emp);
     }
@@ -75,7 +70,15 @@ class Exmple01ApplicationTests {
 //    }
     @Test
     public void testList() {
-        List<Emp> list = empMapper.list("李", (short)(1), null, null);
+        List<Emp> list = empMapper.list(null,null,null, null);
         list.stream().forEach(emp-> System.out.println(emp));
+    }
+
+
+    @Test
+    public void testDeleteById() {
+        List<Integer> ids = Arrays.asList(13, 14, 15, 16);
+
+        empMapper.deleteByIds(ids);
     }
 }

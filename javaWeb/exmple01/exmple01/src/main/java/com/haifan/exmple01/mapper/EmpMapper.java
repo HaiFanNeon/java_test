@@ -17,9 +17,12 @@ public interface EmpMapper {
     @Insert ("insert into emp(username, name, gender, image, job, entrydate, dept_id, create_time, update_time) values(#{username}, #{name}, #{gender}, #{image}, #{job}, #{entrydate}, #{deptId}, #{createTime}, #{updateTime})")
     public void insert(Emp emp);
 
-    @Update ("UPDATE emp SET username = #{username}, name = #{name}, gender = #{gender}, image = #{image}, job = #{job}, entrydate = #{entrydate}, dept_id = #{deptId}," +
-            "update_time = #{updateTime} where id = #{id}")
+//    @Update ("UPDATE emp SET username = #{username}, name = #{name}, gender = #{gender}, image = #{image}, job = #{job}, entrydate = #{entrydate}, dept_id = #{deptId}," +
+//            "update_time = #{updateTime} where id = #{id}")
+//    public void update(Emp emp);
+
     public void update(Emp emp);
+
 
 //    @Select ("select * from emp where id = #{id}")
 //    public Emp getById(Integer id);
@@ -40,5 +43,10 @@ public interface EmpMapper {
 //            "entrydate between #{begin} and #{end} order by update_time desc")
 //    public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
     public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
+
+
+    public void deleteByIds(List<Integer> ids);
+
+
 
 }
