@@ -33,4 +33,14 @@ public class DeptServiceImpl implements DeptService{
     public void addDept(String name) {
         deptMapper.addDept(name, LocalDate.now(), LocalDate.now());
     }
+
+    @Override
+    public Dept getById(Integer id) {
+        return deptMapper.getById(id);
+    }
+
+    @Override
+    public void modifyByIdDept(Integer id, String name) {
+        deptMapper.modifyByIdDept(id, name, LocalDate.now());
+    }
 }

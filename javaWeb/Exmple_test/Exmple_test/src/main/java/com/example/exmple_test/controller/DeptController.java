@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Slf4j
@@ -45,4 +46,22 @@ public class DeptController {
         return Result.success();
     }
 
+
+//    @RequestMapping (value = "/{id}", method = RequestMethod.GET)
+    @GetMapping ("/{id}")
+    public Result getById(@PathVariable Integer id) {
+
+        log.info("要查询的部门ID@{}", id);
+        Dept dept = deptService.getById(id);
+
+        return Result.success(dept);
+    }
+
+//    @RequestMapping ( value = "/", method = RequestMethod.PUT)
+    @PutMapping
+    public Result modifyByIdDept(@RequestBody Dept dept) {
+        log.info("请求参数id@{}, 请求参数name@{}", dept.getId(), dept.getName());
+        deptService.modifyByIdDept(dept.getId(), dept.getName());
+        return Result.success();
+    }
 }
